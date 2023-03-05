@@ -1,0 +1,154 @@
+// primeira questao
+fun main(args: Array<String>) {
+    var INDICE = 13
+    var SOMA = 0
+    var K = 0
+
+    while (K < INDICE) {
+        K++
+        SOMA += K
+    }
+
+    println(SOMA)
+    //o valor será 91
+}
+
+//segunda questao
+fun main() {
+    val numero = 21 //valor que vai ser verificado na fibonacci
+    var anterior = 0 // valor anterior da sequencia
+    var atual = 1 // valor atual da sequencia
+    var pertence = false // variavel para indicar se o numero pertence a sequencia
+
+    // Verifica cada valor da sequencia ate ultrapassar o valor do numero informado
+    while (atual <= numero) {
+        if (atual == numero) { // se o numero for encontrado na sequencia, atualiza o numero da variavel
+            pertence = true
+            break
+        }
+        // calcula o proximo valor da sequência
+        val proximo = anterior + atual
+        anterior = atual
+        atual = proximo
+    }
+
+    // imprime a mensagem indicando se o numero pertence ou nao a sequencia
+    if (pertence) {
+        println("$numero pertence a sequencia de fibonacci")
+    } else {
+        println("$numero não pertence a sequencia de fibonacci")
+    }
+}
+
+//terceira questao
+fun main(){
+    // sequencia a
+    fun sequenciaA() {
+        var numero = 7
+        for (i in 1..3) {
+            numero += 2
+        }
+        println(numero)
+    }
+
+    // sequencia b
+    fun sequenciaB() {
+        var numero = 64
+        for (i in 1..1) {
+            numero *= 2
+        }
+        println(numero)
+    }
+
+    // sequencia c
+    fun sequenciaC() {
+        var numero = 36
+        for (i in 1..1) {
+            numero += 2 * i + 1
+        }
+        println(numero)
+    }
+
+    // sequencia d
+    fun sequenciaD() {
+        var numero = 64
+        for (i in 1..1) {
+            numero += 20
+        }
+        println(numero)
+    }
+
+    // sequencia e
+    fun sequenciaE() {
+        var numero1 = 5
+        var numero2 = 8
+        for (i in 1..1) {
+            val proximo = numero1 + numero2
+            println(proximo)
+        }
+    }
+
+    // sequencia f
+    fun sequenciaF() {
+        var numero = 19
+        for (i in 1..1) {
+            numero += 1
+        }
+        println(numero)
+    }
+
+    fun imprime() {
+        sequenciaA()
+        sequenciaB()
+        sequenciaC()
+        sequenciaD()
+        sequenciaE()
+        sequenciaF()
+    }
+
+}
+
+//quarta questao
+fun main(){
+    fun main() {
+        val distancia = 100 // km
+        val velocidadeCarro = 110 // km/h
+        val velocidadeCaminhao = 80 // km/h
+        val tempoEncontro = distancia / (velocidadeCarro + velocidadeCaminhao) * 60 // minutos
+        val distanciaCarro = velocidadeCarro / 60.0 * tempoEncontro // km
+        val distanciaCaminhao = velocidadeCaminhao / 60.0 * (tempoEncontro + 2 * 5) // km (considerando 2 pedágios de 5 minutos cada)
+        val distanciaRibeiraoPreto = distancia / 2 // km
+        if (distanciaCarro < distanciaCaminhao) {
+            println("O carro está mais proximo de Ribeirão Preto.")
+        } else {
+            println("O caminhão está mais proximo de Ribeirão Preto.")
+        }
+    }
+    /*
+    * Para responder essa pergunta, é preciso calcular a distancia percorrida por cada veículo até o momento em que
+    *  se encontram na rodovia. Sabemos que a distancia entre as cidades de Ribeirão Preto e Franca é de 100 km. Como os
+    *  veiculos saem de cidades opostas, eles se encontram no meio do caminho, ou seja, a 50 km de cada cidade.
+    *  O carro percorre esses 50 km a uma velocidade constante de 110 km/h, o que leva aproximadamente 27,27 minutos.
+    *  Durante esse tempo, o caminhão percorre uma distancia menor, já que sua velocidade é menor.
+    *  A uma velocidade constante de 80 km/h, ele percorre apenas 36,36 km nesses 27,27 minutos, o que o deixa a 13,63 km
+    *  da cidade de Ribeirão Preto.
+    *  Portanto, quando os veículos se encontrarem na rodovia, o carro estará mais proximo da cidade de Ribeirão Preto do
+    * que o caminhão. Essa diferença ocorre devido a velocidade maior do carro, que lhe permite percorrer uma distancia
+    * maior em menos tempo. Além disso, o fato do carro possuir tag de pedágio também contribui para sua vantagem em
+    * relação ao caminhão, que leva mais tempo para passar pelos pedágios.
+    * */
+
+}
+
+//quinta questao
+fun main() {
+    val str = "me contratem :)" // Define a string a ser invertida
+    var inverted = "" // Define a string que armazenará a string invertida
+
+    // Percorre a string de trás para frente e adiciona cada caractere a string invertida
+    for (i in str.length - 1 downTo 0) {
+        inverted += str[i]
+    }
+
+    println(inverted) // Imprime a string invertida
+}
